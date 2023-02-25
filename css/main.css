@@ -20,7 +20,7 @@ html, body {
 	background-size: cover;
 	background-position: center;
 	will-change: transform;
-	/* transition: var(--transition)!important; */
+
 }
 .slider__layer::before {
 	content: '';
@@ -35,5 +35,6 @@ html, body {
 .slider__wrapper {
 	will-change: transform;
 	transform-style: preserve-3d;
-	/* transition: var(--transition)!important; */
+	
 }
+
