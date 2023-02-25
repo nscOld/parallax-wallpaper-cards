@@ -4,18 +4,6 @@ position:relative;
 z-index:1;
 max-width:1800px;
 }
-.box-card-2{
-margin: 0 auto;
-position:relative;
-z-index:1;
-width:1440px;
-}
-.box-card-3{
-  margin: 0 auto;
-  position:relative;
-  z-index:1;
-  width:1440px;
-}
 .box-cards{
   display: flex;
   flex-direction: row;
