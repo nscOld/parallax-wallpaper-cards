@@ -1,18 +1,20 @@
-let particles = document.querySelectorAll('canvas.particles'),
+let particles = document.querySelectorAll('canvas.particles'), //Отримує всі елементи на сторінці, що мають тег canvas і клас "particles".
 		radius = 1.35,
 		number = 700
 
-particles.forEach(node => {
+particles.forEach(node => { //Для кожного елемента canvas, знайденого на сторінці, виконує функцію, передаючи його як аргумент.
 
-	const color = node.dataset.color,
+
+	
+	const color = node.dataset.color, //Отримує колір частинок атрибуту "data-color" елемента canvas.
 				ctx = node.getContext('2d'),
 				clr = hexToRgbA(color),
-				width = window.innerWidth,
-				height = window.innerHeight
+				width = window.innerWidth, //Отримує ширину поточного вікна браузера.
+				height = window.innerHeight //Отримує висоту поточного вікна браузера.
 
-	node.width = width
-	node.height = height
-	ctx.fillStyle = clr
+	node.width = width ///Встановлює ширину елемента canvas, що дорівнює ширині вікна браузера.
+	node.height = height //Встановлює висоту елемента canvas дорівнює висоті вікна браузера.
+	ctx.fillStyle = clr //Встановлює колір заливки для canvas елемент.
 
 	let dots = {
 		num: number,
@@ -22,7 +24,7 @@ particles.forEach(node => {
 		array: []
 	}
 
-	function Dot() {
+	function Dot() {//Створює конструктор створення частинок.
 		this.x = Math.random() * width
 		this.y = Math.random() * height
 		this.vx = dots.velocity + Math.random()
@@ -30,7 +32,7 @@ particles.forEach(node => {
 		this.radius = Math.random() * radius
 	}
 
-	Dot.prototype = {
+	Dot.prototype = {//Встановлює методи "create" та "animate" для об'єкта "Dot".
 
 		create: function () {
 			ctx.beginPath()
@@ -54,7 +56,7 @@ particles.forEach(node => {
 		}
 	}
 
-	function createDots() {
+	function createDots() {//Створює функцію для створення та анімації частинок.
 		ctx.clearRect(0, 0, width, height)
 		for (let i = 0; i < dots.num; i++) {
 			dots.array.push(new Dot())
@@ -64,7 +66,7 @@ particles.forEach(node => {
 		dot.animate()
 	}
 
-	setInterval(createDots, 1000 / 30)
+	setInterval(createDots, 1000 / 30)//Запускає функцію "createDots" кожні 33 мілісекунди для створення та анімації частинок.
 
 })
 
