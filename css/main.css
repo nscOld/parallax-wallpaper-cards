@@ -8,6 +8,9 @@ html, body {
 	height: 100%;
 	background-color: #000;
 }
+body::-webkit-scrollbar {
+	display: none;
+	}
 :root {
 	--transition: 1.75s cubic-bezier(.2, .6, 0, 1);
 }
